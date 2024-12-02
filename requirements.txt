@@ -1,1 +1,5 @@
-heroku buildpacks:set heroku/python
+Flask==2.3.3
+numpy==1.24.4
+pandas==2.0.3
+gunicorn==20.1.0  # For running the app on Heroku
+
