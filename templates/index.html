@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Math Solver App - Home</title>
+</head>
+<body>
+    <header>
+        <h1>Math Solver App</h1>
+        <nav>
+            <ul>
+                <li><a href="/" class="{{ 'active' if request.path == '/' else '' }}">Home</a></li>
+                <li><a href="/solve" class="{{ 'active' if request.path == '/solve' else '' }}">Math Task Solver</a></li>
+                <li><a href="/compound_interest" class="{{ 'active' if request.path == '/compound_interest' else '' }}">Compound Interest Calculator</a></li>
+                <li><a href="/pension_savings" class="{{ 'active' if request.path == '/pension_savings' else '' }}">Pension Savings Calculator</a></li>
+                <li><a href="/mortgage_calculator" class="{{ 'active' if request.path == '/mortgage_calculator' else '' }}">Mortgage Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <h2>Welcome to the Math Solver App</h2>
+            <p>Your one-stop solution for financial and mathematical calculations</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Math Solver App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

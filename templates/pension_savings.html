@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Pension Savings Calculator</title>
+</head>
+<body>
+    <header>
+        <h1>Pension Savings Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="/" class="{{ 'active' if request.path == '/' else '' }}">Home</a></li>
+                <li><a href="/solve" class="{{ 'active' if request.path == '/solve' else '' }}">Math Task Solver</a></li>
+                <li><a href="/compound_interest" class="{{ 'active' if request.path == '/compound_interest' else '' }}">Compound Interest Calculator</a></li>
+                <li><a href="/pension_savings" class="{{ 'active' if request.path == '/pension_savings' else '' }}">Pension Savings Calculator</a></li>
+                <li><a href="/mortgage_calculator" class="{{ 'active' if request.path == '/mortgage_calculator' else '' }}">Mortgage Calculator</a></li>
+            </ul>
+        </nav>
+        </nav>
+    </header>
+    <main class="container">
+        <h2>Plan Your Future</h2>
+        <p>Calculate how much you need to save for a comfortable retirement</p>
+        <form method="POST" action="/pension_savings">
+            <label for="current_age">Current Age:</label>
+            <input type="number" id="current_age" name="current_age" placeholder="Enter your current age" required>
+    
+            <label for="retirement_age">Desired Retirement Age:</label>
+            <input type="number" id="retirement_age" name="retirement_age" placeholder="Enter retirement age" required>
+    
+            <label for="monthly_savings">Monthly Savings ($):</label>
+            <input type="number" id="monthly_savings" name="monthly_savings" step="0.01" placeholder="Enter monthly savings" required>
+    
+            <label for="annual_return">Expected Annual Return (%):</label>
+            <input type="number" id="annual_return" name="annual_return" step="0.01" placeholder="Enter annual return rate" required>
+    
+            <button type="submit">Calculate Savings</button>
+        </form>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Math Solver App. All rights reserved.</p>
+    </footer>
+</body>
+</html>

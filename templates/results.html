@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Math Task Results</title>
+    <style>
+        /* Inline styling for demonstration; move this to style.css in a real setup */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #002d72; /* Darker blue */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            color: #ffffff; /* White text */
+        }
+
+        th {
+            background-color: #001f54; /* Dark blue for header */
+            border-bottom: 2px solid #ffd700; /* Yellow bottom border */
+        }
+
+        td {
+            border-bottom: 1px solid #ffd700; /* Yellow border for rows */
+        }
+
+        tr:last-child td {
+            border-bottom: none; /* Remove border for the last row */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Math Task Results</h1>
+        <nav>
+            <ul>
+                <li><a href="/" class="{{ 'active' if request.path == '/' else '' }}">Home</a></li>
+                <li><a href="/solve" class="{{ 'active' if request.path == '/solve' else '' }}">Math Task Solver</a></li>
+                <li><a href="/compound_interest" class="{{ 'active' if request.path == '/compound_interest' else '' }}">Compound Interest Calculator</a></li>
+                <li><a href="/pension_savings" class="{{ 'active' if request.path == '/pension_savings' else '' }}">Pension Savings Calculator</a></li>
+                <li><a href="/mortgage_calculator" class="{{ 'active' if request.path == '/mortgage_calculator' else '' }}">Mortgage Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h2>Results for Your Math Tasks</h2>
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Result</th>
+            </tr>
+            {% for task, result in results.items() %}
+            <tr>
+                <td>{{ task }}</td>
+                <td>{{ result }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/solve" class="button">Solve More Math Tasks</a>
+    </main>
+    <footer>
+        <p>&copy; 2024 Math Solver App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+

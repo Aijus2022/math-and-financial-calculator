@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Pension Savings Result</title>
+</head>
+<body>
+    <header>
+        <h1>Pension Savings Result</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/solve">Math Task Solver</a></li>
+                <li><a href="/compound_interest">Compound Interest Calculator</a></li>
+                <li><a href="/pension_savings">Pension Savings Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Your Projected Savings</h2>
+        <p><strong>Total Savings at Retirement:</strong> ${{ total_savings }}</p>
+        <a href="/pension_savings" class="button">Calculate Again</a>
+    </main>
+    <footer>
+        <p>&copy; 2024 Math Solver App. All rights reserved.</p>
+    </footer>
+</body>
+</html>

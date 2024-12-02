@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Math Task Solver</title>
+</head>
+<body>
+    <header>
+        <h1>Math Task Solver</h1>
+        <nav>
+            <ul>
+                <li><a href="/" class="{{ 'active' if request.path == '/' else '' }}">Home</a></li>
+                <li><a href="/solve" class="{{ 'active' if request.path == '/solve' else '' }}">Math Task Solver</a></li>
+                <li><a href="/compound_interest" class="{{ 'active' if request.path == '/compound_interest' else '' }}">Compound Interest Calculator</a></li>
+                <li><a href="/pension_savings" class="{{ 'active' if request.path == '/pension_savings' else '' }}">Pension Savings Calculator</a></li>
+                <li><a href="/mortgage_calculator" class="{{ 'active' if request.path == '/mortgage_calculator' else '' }}">Mortgage Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h2>Enter Math Tasks for the Bot to Solve</h2>
+        <form action="/solve" method="POST">
+            <label for="math_tasks">Enter Math Tasks (e.g., 2+2 or 5*3):</label>
+            <textarea id="math_tasks" name="math_tasks" rows="5" placeholder="2+2; 5*3; 12/4" required></textarea>
+            <button type="submit">Solve</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Math Solver App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+

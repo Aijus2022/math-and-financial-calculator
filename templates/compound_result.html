@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Compound Interest Result</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Compound Interest Result</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/solve">Math Task Solver</a></li>
+                    <li><a href="/compound_interest">Compound Interest Calculator</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>Calculation Result</h2>
+            <p><strong>Final Amount (A):</strong> ${{ result.amount }}</p>
+            <p><strong>Interest Earned:</strong> ${{ result.interest }}</p>
+            <a href="/compound_interest" class="button">Back to Calculator</a>
+        </main>
+    </div>
+</body>
+</html>
+
+

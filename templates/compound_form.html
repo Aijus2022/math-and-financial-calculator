@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Compound Interest Calculator</title>
+</head>
+<body>
+    <header>
+        <h1>Compound Interest Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="/" class="{{ 'active' if request.path == '/' else '' }}">Home</a></li>
+                <li><a href="/solve" class="{{ 'active' if request.path == '/solve' else '' }}">Math Task Solver</a></li>
+                <li><a href="/compound_interest" class="{{ 'active' if request.path == '/compound_interest' else '' }}">Compound Interest Calculator</a></li>
+                <li><a href="/pension_savings" class="{{ 'active' if request.path == '/pension_savings' else '' }}">Pension Savings Calculator</a></li>
+                <li><a href="/mortgage_calculator" class="{{ 'active' if request.path == '/mortgage_calculator' else '' }}">Mortgage Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h2>Calculate Compound Interest</h2>
+        <form method="POST" action="/compound_interest">
+            <label for="principal">Principal (P):</label>
+            <input type="number" id="principal" name="principal" step="0.01" placeholder="Enter principal amount" required>
+    
+            <label for="rate">Annual Interest Rate (%) (r):</label>
+            <input type="number" id="rate" name="rate" step="0.01" placeholder="Enter annual rate" required>
+    
+            <label for="time">Time in Years (t):</label>
+            <input type="number" id="time" name="time" step="0.01" placeholder="Enter time in years" required>
+    
+            <label for="frequency">Compounding Frequency (n):</label>
+            <select id="frequency" name="frequency" required>
+                <option value="1">Annually</option>
+                <option value="4">Quarterly</option>
+                <option value="12">Monthly</option>
+                <option value="365">Daily</option>
+            </select>
+    
+            <button type="submit">Calculate</button>
+        </form>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Math Solver App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
